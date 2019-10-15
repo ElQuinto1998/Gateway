@@ -3,7 +3,7 @@ const router = express.Router();
 let apiAdapter = require('./apiAdapter');
 let isAuthorized = require('../controller/requestAuthenticator');
 
-const BASE_URL = 'http://localhost:9000/api_inventario';
+const BASE_URL = 'https://msinventario.herokuapp.com/api_inventario';
 const api = apiAdapter(BASE_URL);
 
 router.post('/medicamentos', (req, res) => {

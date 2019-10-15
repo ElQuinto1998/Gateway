@@ -20,6 +20,9 @@
     "test": "test",
     "dev": "nodemon server.js"
   },
+  "engines": {
+    "node": "10.x"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ElQuinto1998/Gateway.git"

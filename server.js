@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 
 require('./database');
 
+app.set('port', process.env.PORT || 3000);
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -25,6 +27,6 @@ app.get('/', (req, res) => {
 
 app.use(router);
 
-app.listen(3000, () => {
+app.listen(app.get('port'), () => {
     console.log("Simple API Gateway run on localhost:3000");
 });

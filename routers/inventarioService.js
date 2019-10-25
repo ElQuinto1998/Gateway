@@ -83,5 +83,28 @@ router.get('/contadores', (req, res) => {
     })
 });
 
+router.get('/pedidos', (req, res) => {
+    api.get(req.path).then(resp => {
+        res.send(resp.data)
+    })
+});
+
+router.get('/pedidos/:userEmail', (req, res) => {
+    api.get(req.path).then(resp => {
+        res.send(resp.data)
+    })
+});
+
+router.post('/pedidos', (req, res) => {
+    api.post(req.path, req.body).then(resp => {
+        res.send(resp.data)
+    })
+});
+
+router.put('/pedidos/:numberPedido', (req, res) => {
+    api.put(req.path, req.body).then(resp => {
+        res.send(resp.data)
+    })
+});
 
 module.exports = router;

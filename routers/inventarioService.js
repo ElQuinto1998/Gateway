@@ -89,19 +89,19 @@ router.get('/pedidos', (req, res) => {
     })
 });
 
-router.get('/pedidos/:userEmail', (req, res) => {
+router.get('/pedidos/:userEmail', isAuthorized.isAuth, (req, res) => {
     api.get(req.path).then(resp => {
         res.send(resp.data)
     })
 });
 
-router.post('/pedidos', (req, res) => {
+router.post('/pedidos', isAuthorized.isAuth, (req, res) => {
     api.post(req.path, req.body).then(resp => {
         res.send(resp.data)
     })
 });
 
-router.put('/pedidos/:numberPedido', (req, res) => {
+router.put('/pedidos/:numberPedido', isAuthorized.isAuth, (req, res) => {
     api.put(req.path, req.body).then(resp => {
         res.send(resp.data)
     })

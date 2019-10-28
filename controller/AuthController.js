@@ -60,10 +60,16 @@ router.post('/login', (req, res) => {
                         avatar: user.avatar,
                         rol: user.rol
                     };
+                    const user = {
+                        firstName: user.firstName,
+                        lastName: user.lastName,
+                        email: user.email,
+                        avatar: user.avatar,
+                    };
                     let token = jwt.sign(payload, process.env.SECRET_KEY, {
                         expiresIn: 1440
                     });
-                    res.send({message: 'logged successfully' ,token: token});
+                    res.send({message: 'logged successfully', token: token, usuario: user});
                 } else {
                     res.json({error: 'Incorrect password'});
                 }
